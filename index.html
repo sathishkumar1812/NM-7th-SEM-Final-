@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Enhanced Counter App</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<div class="counter-container">
+    <h1>Counter App</h1>
+    <div id="counter" class="counter">0</div>
+    <div class="buttons1">
+        <button class="button" onclick="decrement()">Decrement</button>
+        <button class="button" onclick="increment()">Increment</button>
+    </div>
+    <div class="buttons2">
+        <button class="button reset" onclick="resetCounter()">Reset</button>
+    </div>
+    <div class="buttons3">
+        <button class="button settings-button" onclick="toggleSettings()">⚙️ Settings</button>
+    </div>
+</div>
+
+<div id="settings" class="settings-panel">
+    <h2>Settings</h2>
+    <div class="setting-option">
+        <label>Set count:</label>
+        <input type="number" id="setCount" value="0" oninput="setCounter()">
+    </div>
+    <div class="setting-option">
+        <label>Limits Off / On:</label>
+        <label class="switch">
+            <input type="checkbox" id="limitToggle" onchange="toggleLimit()">
+            <span class="slider"></span>
+        </label>
+    </div>
+    <div class="setting-option">
+        <label>Maximum:</label>
+        <input type="number" id="maxCount" value="20" disabled>
+    </div>
+    <div class="setting-option color-options">
+        <label>Select Theme:</label>
+        <div class="color-picker">
+            <button class="color black" onclick="changeTheme('#333')"></button>
+            <button class="color white" onclick="changeTheme('#fff')"></button>
+            <button class="color blue" onclick="changeTheme('#007bff')"></button>
+            <button class="color pink" onclick="changeTheme('#ff007f')"></button>
+            <button class="color teal" onclick="changeTheme('#008080')"></button>
+        </div>
+    </div>
+    <button class="button close-settings" onclick="toggleSettings()">Close</button>
+</div>
+
+<script src="script.js"></script>
+
+</body>
+</html>
